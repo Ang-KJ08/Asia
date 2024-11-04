@@ -1,0 +1,171 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+/* top image */
+
+.bgimg{
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+}
+
+.bgimg::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(   0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.headtxt{
+    color: white;
+    position: absolute; 
+    width: 100%;
+    height: 100%;       
+    left: 0%;
+    top: 35%;
+    z-index: 2;
+    font-size: 13vh;
+    text-shadow: 10px 10px 10px rgba(128, 110, 110, 0.8);
+    text-align: center;
+    margin: auto;
+}
+
+.bgimg img{
+    width: 100%;    
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contents */
+
+.desc{
+    display: flex;
+}
+
+.desc .leftcol p{
+    color: white;
+    margin: 0.2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba( 255, 255, 255, 0.1);
+}
+
+.leftcol{
+    flex: 8;
+}
+
+.rightcol{
+    flex: 1;
+    border-radius: 5px;
+    background-color: darkcyan;
+    margin: 0.2rem;
+}
+
+/* Navigation Bar */
+
+.nav a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    text-align: center;
+    margin: 5px ;
+    padding: 10px;   
+    border-radius: 3px;
+}
+
+.nav a:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+}
+
+/* Grid */
+
+.select{
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-flow: row;
+    padding: 10px; 
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 5px;
+    row-gap: 1rem;
+} 
+
+div.cardlink{
+    padding: 10px;
+}
+
+.cardlink a{
+    text-decoration: none;
+    color: black;
+}
+
+.card{
+    text-align: center; 
+    border-radius: 5px; 
+    padding: 7px;
+    background-color: white;
+    clear: both;
+    height: 100%;
+}
+
+.card img{
+    width: 90%;
+    height: 10rem;
+    border: 1px solid black;
+}
+
+.card:hover{
+    transform: translateY(-0.5rem);
+    background-color: lightskyblue;
+    h3{
+        text-decoration: underline  ;
+    }
+}
+
+/* Media queries */
+
+@media (max-width: 764px){
+    .headtxt{
+        font-size: 6vh;
+    }
+
+    .desc{  
+        font-size: 1vh; 
+    }
+
+    .nav a{
+        padding: 5px;
+    }
+}
+
+@media (max-width: 1000px){
+    .select{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 800px){
+    .select{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 630px){
+    .select{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px){
+    .select{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

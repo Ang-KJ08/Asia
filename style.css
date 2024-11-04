@@ -1,0 +1,277 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+hr{
+    border: 1px yellow solid;
+}
+
+/* Navigation bar */
+
+.navbar{
+    width: 100%;
+    clear: both;
+    background-color: rgba(0,0,0, 0.8);
+    height: 3rem;
+    position: fixed;
+    z-index: 1000;
+}
+
+.link a{    
+    color: white;
+    font-size: 120%;
+    text-decoration: none;
+    padding: 0.5rem;
+    float: left;
+    margin: 3px;
+    margin-bottom: 0;
+    display: block;
+}  
+
+.link a:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* top image */
+
+.bgimg{
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+}
+
+.bgimg::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.headtxt{
+    color: white;
+    position: absolute; 
+    width: 100%;
+    height: 100%;       
+    left: 0%;
+    top: 35%;
+    z-index: 2;
+    font-size: 13vh;
+    text-shadow: 10px 10px 10px rgba(128, 110, 110, 0.8);
+    text-align: center;
+    margin: auto;
+}
+
+.bgimg img{
+    width: 100%;    
+    height: 100%;
+    object-fit: cover;
+    margin-top: 3rem;
+}
+
+/* Contents */
+.row{
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    height: 100vh;
+    width: 100vw;
+    .rightcol{
+        transform: translateX(-1500%);
+        transition: 1s ease-in-out;
+    }
+    .leftcol{
+        transform: translateX(-200%);
+        transition: 1s ease-in-out;
+    }
+}
+
+.row:hover{
+    .rightcol{
+        transform: translateX(0px);
+        transition: 1s ease-in-out;
+    }
+    .leftcol{
+        transform: translateX(0px);
+        transition: 1s ease-in-out;
+    }
+}
+
+.leftcol{
+    flex: 5;
+    margin: 1rem;
+    border-radius: 5px;
+    display: flex;
+    color: black;
+}
+
+.leftcol::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.7);
+    z-index: 1;
+}
+
+.leftcol img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.leftcol .text{ 
+    padding: 5px;
+    position: absolute;
+    z-index: 2;
+    margin: 1rem;
+    color: whitesmoke;
+    float: left;
+    font-size: 1.5rem;
+    h2{
+        text-decoration: underline;
+    }
+}
+
+.rightcol{
+    flex: 1;
+    background-color: #219b94;
+    margin: 1rem;
+    border-radius: 5px;
+    padding: 5px;
+    height: 7%;
+}   
+
+/* Right column dropdown menu */
+.rightcol .dropdown h3{
+    border: 3px solid black;
+    text-align: center;
+    background-color: #beb142;
+    margin: 1rem;
+}
+
+#menuid{
+    background-color: rgb(255, 42, 42);
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.menu-link{
+    text-align: center;
+    padding: 5px;
+    display: none;
+    background: #9aadd1;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.rightcol:hover{
+    height: 100%;
+}
+
+.rightcol:hover .menu-link{
+    display: block;
+}   
+
+.menu-link:hover{
+    background-color: rgba(175, 197, 238, 0.6);
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+/* Responsive media queries */
+
+@media (max-width: 992px){
+    .navbar{
+        overflow: wrap;
+        height: 5rem;
+    }
+
+    .headtxt{
+        top: 45%;
+        font-size: 50px;
+    }
+
+    .bgimg img{
+        margin-top: 5rem;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+
+    .leftcol{
+        width: 100vw;
+        height: 10vh;
+        margin: auto;
+    }
+
+    .rightcol{
+        width: 100vw;
+        height: 120vh;
+        z-index: 5;
+    }
+
+    .text h2{
+        font-size: 2rem;
+    }
+
+    .text p{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 519px){
+    .navbar{
+        font-size: 80%;
+    }
+
+    .headtxt{
+        top: 50%;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 437px){
+    .bgimg img{
+        margin-top: 7rem;
+    }
+}
+
+@media (max-width: 355px){
+
+    .headtxt{
+        top: 65%;
+        font-size: 25px;
+    }
+
+    .leftcol{
+        flex: 2;
+    }
+
+    .rightcol{
+        flex: 1;
+    }
+}
+
+@media (max-width: 326px){
+
+    .headtxt{
+        top: 70%;
+        font-size: 25px;
+    }
+}
